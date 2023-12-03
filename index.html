@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barcode Scanner</title>
+    <title>QR Code Scanner</title>
 </head>
 <body>
-    <h1>Barcode Scanner</h1>
+    <h1>QR Code Scanner</h1>
 
-    <form id="barcodeForm">
-        <label for="barcodeInput">Barcode:</label>
-        <input type="text" id="barcodeInput" name="barcode" readonly>
+    <form id="qrCodeForm">
+        <label for="qrCodeInput">QR Code:</label>
+        <input type="text" id="qrCodeInput" name="qrCode" readonly>
     </form>
 
+    <script src="https://cdn.rawgit.com/zxing-js/instascan/2.0.0/instascan.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
