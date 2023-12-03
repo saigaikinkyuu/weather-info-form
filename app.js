@@ -1,37 +1,33 @@
 // app.js
-document.addEventListener("DOMContentLoaded", function () {
-    const video = document.getElementById('video');
-    const barcodeResultInput = document.getElementById('barcodeResult');
-    const barcodeForm = document.getElementById('barcodeForm');
 
-    // カメラにアクセスする
-    navigator.mediaDevices.getUserMedia({ video: true })
-        .then((stream) => {
-            video.srcObject = stream;
+// Quagga.jsの設定
+Quagga.init({
+    inputStream: {
+        name: "Live",
+        type: "LiveStream",
+        target: document.querySelector("#interactive"),
+    },
+    decoder: {
+        readers: ["ean_reader", "code_128_reader"],
+    },
+}, function (err) {
+    if (err) {
+        console.error(err);
+        return;
+    }
+    console.log("Quagga.js initialized");
 
-            // バーコードリーダーライブラリの初期化
-            const codeReader = new ZXing.BrowserMultiFormatReader();
-            
-            // バーコードが読み取られたときの処理
-            codeReader.decodeFromVideoDevice(undefined, video, (result, err) => {
-                if (result) {
-                    // 読み取ったバーコードの値をテキストボックスに表示
-                    barcodeResultInput.value = result.text;
-                }
-                if (err) {
-                    console.error(err);
-                }
-            });
+    // カメラからのバーコード読み取り開始
+    Quagga.start();
+});
 
-        })
-        .catch((error) => {
-            console.error("Error accessing camera:", error);
-        });
+// バーコードが読み取られたときの処理
+Quagga.onDetected(function (result) {
+    var code = result.codeResult.code;
 
-    // フォームが送信されたときの処理
-    barcodeForm.addEventListener('submit', function (event) {
-        event.preventDefault();
-        // バーコードの値をフォームの処理に渡すなど、必要な処理を追加
-        alert('Barcode value submitted: ' + barcodeResultInput.value);
-    });
+    // 読み取ったバーコードを表示
+    document.getElementById("result").textContent = "バーコード: " + code;
+
+    // フォームにバーコードを自動入力
+    document.getElementById("barcodeInput").value = code;
 });
