@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Scanner</title>
+    <title>QRコードのテスト</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <style>
@@ -31,21 +29,21 @@
     left: 0px;
     z-index: 100;
 }
+
 #qr-msg{
     position: absolute;
     top: 500px;
     left: 0px;
 }
+
     </style>
-    <h1>QR Code Scanner</h1>
-    <div id="wrapper">
-    <video id="video" autoplay muted playsinline></video>
-    <canvas id="camera-canvas"></canvas>
-    <canvas id="rect-canvas"></canvas>
-    </div>
-    <span id="qr-msg">QRコード: 見つかりません</span>
-    <script src="https://cdn.rawgit.com/cozmo/jsQR/master/dist/jsQR.js"></script>
-    <script src="script.js"></script>
+        <div id="wrapper">
+            <video id="video" autoplay muted playsinline></video>
+            <canvas id="camera-canvas"></canvas>
+            <canvas id="rect-canvas"></canvas>
+            <span id="qr-msg">QRコード: 見つかりません</span>
+        </div>
     <script src="./jsQR.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
