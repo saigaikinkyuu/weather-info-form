@@ -2,18 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barcode Scanner</title>
+    <!-- Quagga.js CSSファイルのインポート -->
+    <link rel="stylesheet" href="node_modules/quagga/dist/quagga.min.css">
 </head>
 <body>
-    <h1>Barcode Scanner</h1>
-    <video id="video" width="300" height="200" autoplay></video>
-    <input type="text" id="barcodeResult" placeholder="Barcode Result">
+    <!-- カメラの映像を表示するための要素 -->
+    <div id="interactive" class="viewport"></div>
+    
+    <!-- 読み取ったバーコードを表示するための要素 -->
+    <div id="result"></div>
+    
+    <!-- 入力フォーム -->
     <form id="barcodeForm">
-        <!-- Your other form fields go here -->
-        <input type="submit" value="Submit">
+        <label for="barcodeInput">バーコード:</label>
+        <input type="text" id="barcodeInput" name="barcode" readonly>
     </form>
 
+    <!-- Quagga.js JavaScriptファイルのインポート -->
+    <script src="node_modules/quagga/dist/quagga.min.js"></script>
+    <!-- 自作のJavaScriptファイルのインポート -->
     <script src="app.js"></script>
 </body>
 </html>
