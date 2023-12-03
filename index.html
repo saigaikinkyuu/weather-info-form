@@ -6,14 +6,46 @@
     <title>QR Code Scanner</title>
 </head>
 <body>
+    <style>
+        #wrapper{
+    position: relative;
+}
+
+#video{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    visibility: hidden;
+}
+
+#camera-canvas{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 50;
+}
+
+#rect-canvas{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+}
+#qr-msg{
+    position: absolute;
+    top: 500px;
+    left: 0px;
+}
+    </style>
     <h1>QR Code Scanner</h1>
-
-    <form id="qrCodeForm">
-        <label for="qrCodeInput">QR Code:</label>
-        <input type="text" id="qrCodeInput" name="qrCode" readonly>
-    </form>
-
+    <div id="wrapper">
+    <video id="video" autoplay muted playsinline></video>
+    <canvas id="camera-canvas"></canvas>
+    <canvas id="rect-canvas"></canvas>
+    </div>
+    <span id="qr-msg">QRコード: 見つかりません</span>
     <script src="https://cdn.rawgit.com/cozmo/jsQR/master/dist/jsQR.js"></script>
-    <script src="app.js"></script>
+    <script src="script.js"></script>
+    <script src="./jsQR.js"></script>
 </body>
 </html>
