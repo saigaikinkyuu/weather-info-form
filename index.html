@@ -63,8 +63,16 @@
     <div hidden><b>Data:</b> <span id="outputData"></span></div>
   </div>
     <form id="myForm">
-        <label for="textInput">Text Input:</label>
-        <input type="text" id="textInput" name="textInput">
+        <label for="textInput1">気圧:</label>
+        <input type="text" id="textInput1" name="textInput1">
+        <label for="textInput2">天気:</label>
+        <input type="text" id="textInput2" name="textInput2">
+        <label for="textInput3">降水量:</label>
+        <input type="text" id="textInput3" name="textInput3">
+        <label for="textInput4">風向:</label>
+        <input type="text" id="textInput4" name="textInput4">
+        <label for="textInput5">風速:</label>
+        <input type="text" id="textInput5" name="textInput5">
     </form>
   <script>
     var video = document.createElement("video");
@@ -117,10 +125,46 @@
           // フォーム要素を取得
           var myForm = document.getElementById('myForm');
           // フォーム内のテキスト入力要素を取得
-          var textInput = myForm.elements['textInput'];
+          var textInput1 = myForm.elements['textInput1'];
+          var textInput2 = myForm.elements['textInput2'];
+          var textInput3 = myForm.elements['textInput3'];
+          var textInput4 = myForm.elements['textInput4'];
+          var textInput5 = myForm.elements['textInput5'];
+          
+          var inputValue1 = textInput1.value;
+          var inputValue2 = textInput2.value;
+          var inputValue3 = textInput3.value;
+          var inputValue4 = textInput4.value;
+          var inputValue5 = textInput5.value;
+          
+          // 入力された文字列が空でないか確認
+          if (inputValue1.trim() !== '') {
+          if (inputValue2.trim() !== '') {
+          if (inputValue3.trim() !== '') {
+          if (inputValue4.trim() !== '') {
+          if (inputValue5.trim() !== '') {
+            //何もしない
+          }else{
           // テキスト入力に特定の文字列を設定
-          textInput.value = code.data;
-        } else {
+          textInput5.value = code.data;
+          }
+          }else{
+          // テキスト入力に特定の文字列を設定
+          textInput4.value = code.data;
+          }
+          }else{
+          // テキスト入力に特定の文字列を設定
+          textInput3.value = code.data;
+          }
+          }else{
+          // テキスト入力に特定の文字列を設定
+          textInput2.value = code.data;
+          }
+          }else{
+          // テキスト入力に特定の文字列を設定
+          textInput1.value = code.data;
+          }
+          } else {
           outputMessage.hidden = false;
           outputData.parentElement.hidden = true;
         }
