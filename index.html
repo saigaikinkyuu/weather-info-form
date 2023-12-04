@@ -149,8 +149,33 @@
           if (inputValue5.trim() !== '') {
             //何もしない
           }else{
-          // テキスト入力に特定の文字列を設定
-          textInput5.value = code.data;
+            if(code.data === "0"){
+              alert("スキャンされたQRコードの値：" + code.data)
+              // テキスト入力に特定の文字列を設定
+              textInput5.value = code.data + "kt";
+            }else if(code.data === "5"){
+              alert("スキャンされたQRコードの値：" + code.data)
+              // テキスト入力に特定の文字列を設定
+              textInput5.value = code.data + "kt";
+            }else if(code.data === "10"){
+              alert("スキャンされたQRコードの値：" + code.data)
+              // テキスト入力に特定の文字列を設定
+              textInput5.value = code.data + "kt";
+            }else if(code.data === "15"){
+              alert("スキャンされたQRコードの値：" + code.data)
+              // テキスト入力に特定の文字列を設定
+              textInput5.value = code.data + "kt";
+            }else if(code.data === "20"){
+              alert("スキャンされたQRコードの値：" + code.data)
+              // テキスト入力に特定の文字列を設定
+              textInput5.value = code.data + "kt";
+            }else if(code.data === "20<"){
+              alert("スキャンされたQRコードの値：" + code.data)
+              // テキスト入力に特定の文字列を設定
+              textInput5.value = code.data + "kt";
+            }else{
+              alert("スキャンされたQRコードが型に合わないものです。")
+            }
           }
           }else{
             if(code.data === "北"){
@@ -217,6 +242,8 @@
               alert("スキャンされたQRコードの値：" + code.data)
               // テキスト入力に特定の文字列を設定
               textInput4.value = code.data;
+            }else{
+              alert("スキャンされたQRコードが型に合わないものです。")
             }
           }
           }else{
