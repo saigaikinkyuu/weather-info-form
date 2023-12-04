@@ -65,12 +65,16 @@
     <form id="myForm">
         <label for="textInput1">気圧:</label>
         <input type="text" id="textInput1" name="textInput1">
-        <label for="textInput2">天気:</label>
+        <br>
+        <label for="textInput2">気温:</label>
         <input type="text" id="textInput2" name="textInput2">
+        <br>
         <label for="textInput3">降水量:</label>
         <input type="text" id="textInput3" name="textInput3">
+        <br>
         <label for="textInput4">風向:</label>
         <input type="text" id="textInput4" name="textInput4">
+        <br>
         <label for="textInput5">風速:</label>
         <input type="text" id="textInput5" name="textInput5">
     </form>
@@ -161,6 +165,7 @@
           textInput2.value = code.data;
           }
           }else{
+            if(code.data === "")
           // テキスト入力に特定の文字列を設定
           textInput1.value = code.data;
           }
