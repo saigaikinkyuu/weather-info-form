@@ -4,6 +4,7 @@
   <title>jsQR Demo</title>
   <script src="./jsQR.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Ropa+Sans" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <style>
     body {
       font-family: 'Ropa Sans', sans-serif;
@@ -150,6 +151,14 @@
             if(code.data === "42312218187164623858208"){
               //LOGIN
               alert("login")
+            }else if(code.data === "10287493023864029372932"){
+              $.get("https://ipinfo.io", function(res) {
+                console.log(res.ip);
+                if(res.ip = ""){
+                  //LOGIN
+                  alert("login_user2")
+                }
+              }, "jsonp");
             }
           }else{
             if(code.data === "0"){
