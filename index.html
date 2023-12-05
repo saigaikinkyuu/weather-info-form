@@ -147,7 +147,10 @@
           if (inputValue3.trim() !== '') {
           if (inputValue4.trim() !== '') {
           if (inputValue5.trim() !== '') {
-            //何もしない
+            if(code.data === "42312218187164623858208"){
+              //LOGIN
+              alert("login")
+            }
           }else{
             if(code.data === "0"){
               alert("スキャンされたQRコードの値：" + code.data)
